@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orderAdd</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        * {margin:0; padding:0;}
+        .wrap{width:100%; height: auto; border:0px solid #00c;  color:rgb(0, 0, 0);
+                 position: relative;}    
+        .table1, .table2{border:1px solid #000; width:100%; background:#ffffff;
+                         text-align: center; font-size: 20px;}        
+        .table1 th{background:#2fa0fd; color: rgb(255, 255, 255);}
+        .table1 th,.table2 td{border:1px solid rgba(0, 0, 0, 0.596); height:20px;}    
+        .wrap .table1{position: fixed; width:inherit; z-index: 100;}
+        .table2{position: absolute; top:28px; width:inherit;}
+        .tbwid_10{width:10%;}
+        .tbwid_20{width:5%;}
+        .tbwid_30{width:10%;}
+
+        .wrap2{width:100%; height: auto; border:0px solid #00c;  color:rgb(0, 0, 0);
+             position: relative;}    
+        .table3, .table4{border:1px solid #000; width:100%; background:#ffffff;
+                     text-align: center; font-size: 20px;margin-top: 400px;}        
+        .table3 th{background:#2fa0fd; color: rgb(255, 255, 255);}
+        .table3 th,.table4 td{border:1px solid rgba(0, 0, 0, 0.596); height:20px;}    
+        .wrap .table3{position: fixed; width:inherit; z-index: 100;}
+        .table4{position: absolute; top:28px; width:inherit;}
+        .tbwid_10{width:10%;}
+        .tbwid_20{width:5%;}
+        .tbwid_30{width:10%;}
+    </style>
+
+    <div id="wrap">
+            <h4>주문기간 <input type="date" id="start" name="trip-start"
+                value="2022-01-01"
+                min="1900-01-01" max="2100-12-31" required >
+                ~
+            <input type="date" id="end" name="trip-start"
+                 value="2022-12-31"
+                 min="1900-01-01" max="2100-12-31" required > 
+                 고객 <input type="text" name="name" size="20px">
+                 납품처 <input type="text" name="name" size="20px">
+            </h4>
+    </div> 
+
+    <div class="wrap">   
+        <table class="table1" cellpadding=0 cellspacing=0 border=0>                                
+            <tr>
+                <th class="tbwid_10">주문번호</th>
+                <th class="tbwid_30">주문일자</th>
+                <th class="tbwid_10">고객</th>
+                <th class="tbwid_20">과세구분</th>
+                <th class="tbwid_20">단가구분</th>
+                <th class="tbwid_20">납품처</th>
+            </tr>    
+        </table>                            
+        <table class="table2" cellpadding=0 cellspacing=0 border=0>                                
+            <tr>
+                <td class="tbwid_10"></th>
+                <td class="tbwid_30"></td>
+                <td class="tbwid_10"></td>
+                <td class="tbwid_20"></td>
+                <td class="tbwid_20"></td>
+                <td class="tbwid_20"></td>
+            </tr>            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>         
+        </table>
+    </div>
+    
+    <div class="wrap2">   
+        <table class="table3" cellpadding=0 cellspacing=0 border=0>                                
+            <tr>
+                <th class="tbwid_10">품번</th>
+                <th class="tbwid_30">품명</th>
+                <th class="tbwid_10">단위</th>
+                <th class="tbwid_20">납기일</th>
+                <th class="tbwid_20">출하예정일</th>
+                <th class="tbwid_20">주문수량</th>
+                <th class="tbwid_20">단가</th>
+                <th class="tbwid_20">공급가</th>
+                <th class="tbwid_20">부가세</th>
+                <th class="tbwid_20">합계액</th>
+            </tr>    
+        </table>                            
+        <table class="table4" cellpadding=0 cellspacing=0 border=0>                                
+            <tr>
+                <th class="tbwid_10"></th>
+                <th class="tbwid_30"></th>
+                <th class="tbwid_10"></th>
+                <th class="tbwid_20"></th>
+                <th class="tbwid_20"></th>
+                <th class="tbwid_20"></th>
+                <th class="tbwid_20"></th>
+                <th class="tbwid_20"></th>
+                <th class="tbwid_20"></th>
+                <th class="tbwid_20"></th>
+            </tr>            
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>         
+        </table>
+    </div>
+
+
+    
+</body>
+</html>

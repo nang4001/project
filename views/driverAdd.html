@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customerAdd</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+    <div id="wrap">
+        <form align="center" method="post">
+            <h4>성명 <input type="text" name="name" size="20px"> </h4>
+            <h4>주민등록번호 <select id="kind" name="구분" class="sel" aria-label="외국인 여부">
+                <option value="">내국인</option>
+                <option value="0.내국인">
+                    0.내국인
+                </option>
+                <option value="1.외국인">
+                    1.외국인
+                </option>
+            </select> <input type="text" name="name" size="20px"> </h4>
+            <h4>전화번호 <input type="text" name="name" size="1px"> ) <input type="text" name="name" size="10px"></h4>
+        
+            <h4>
+                <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        
+                우편번호 : <input type="text" name="zip" style="width:80px; height:20px;" />
+                <button type="button" style="width:60px; height:32px;" onclick="openZipSearch()">검색</button><br>
+                주소 : <input type="text" name="addr1" style="width:300px; height:20px;" readonly /><br>
+                상세 : <input type="text" name="addr2" style="width:300px; height:20px;" />
+            
+            <script>
+                function openZipSearch() {
+                    new daum.Postcode({
+                        oncomplete: function(data) {
+                            $('[name=zip]').val(data.zonecode); // 우편번호 (5자리)
+                            $('[name=addr1]').val(data.address);
+                            $('[name=addr2]').val(data.buildingName);
+                        }       
+                    }).open();
+                }
+            </script>
+            </h4>
+        
+            
+            <h4>입사일 <input type="date" id="start" name="trip-start"
+                value="2022-12-31"
+                min="1900-01-01" max="2100-12-31"  > </h4>
+            <h4>퇴사일 <input type="date" id="end" name="trip-start"
+                value="2022-12-31"
+                min="1900-01-01" max="2100-12-31"  > </h4>
+     </form>
+     </div>       
+</body>
+</html>

@@ -1,0 +1,121 @@
+<style>
+    * {margin:0; padding:0;}
+    .wrap{width:600px; height: 200px; border:0px solid #00c;  color:rgb(0, 0, 0);
+             position: relative;}    
+    .table1, .table2{border:1px solid #000; width:100%; background:#E1E1E1;
+                     text-align: center; font-size: 20px;}        
+    .table1 th{background:#5c5c5c;}
+    .table1 th,.table2 td{border:1px solid rgba(0, 0, 0, 0.596); height:20px;}    
+    .wrap .table1{position: fixed; width:inherit; z-index: 100;}
+    .table2{position: absolute; top:28px; width:inherit;}
+    .tbwid_10{width:10%;}
+    .tbwid_20{width:20%;}
+    .tbwid_30{width:30%;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+ 
+    <div class="wrap">        
+            <table class="table1" cellpadding=0 cellspacing=0 border=0>                                
+                <tr>
+                    <th class="tbwid_20">구분</th>
+                    <th class="tbwid_30">품목</th>
+                    <th class="tbwid_10">수량</th>
+                    <th class="tbwid_20">단가</th>
+                    <th class="tbwid_20">구매금액</th>
+                </tr>    
+            </table>                            
+            <table class="table2" cellpadding=0 cellspacing=0 border=0>                                
+                <tr>
+                    <td class="tbwid_20">게임</th>
+                    <td class="tbwid_30">배틀그라운드</td>
+                    <td class="tbwid_10">2</td>
+                    <td class="tbwid_20">20,000</td>
+                    <td class="tbwid_20">40,000</td>
+                </tr>            
+                <tr>
+                    <td>게임</td>
+                    <td>오버워치</td>
+                    <td>1</td>
+                    <td>32,000</td>
+                    <td>32,000</td>
+                </tr>
+                <tr>
+                    <td>게임</td>
+                    <td>스타크래프트2</td>
+                    <td>2</td>
+                    <td>28,000</td>
+                    <td>56,000</td>
+                </tr>
+                <tr>
+                    <td>게임</td>
+                    <td>드래곤퀘스트11</td>
+                    <td>1</td>
+                    <td>40,000</td>
+                    <td>40,000</td>
+                </tr>            
+                <tr>
+                    <td>게임</td>
+                    <td>배틀그라운드</td>
+                    <td>2</td>
+                    <td>20,000</td>
+                    <td>40,000</td>
+                </tr>
+                <tr>
+                    <td>게임</td>
+                    <td>오버워치</td>
+                    <td>1</td>
+                    <td>32,000</td>
+                    <td>32,000</td>
+                </tr>
+                <tr>
+                    <td>게임</td>
+                    <td>스타크래프트2</td>
+                    <td>2</td>
+                    <td>28,000</td>
+                    <td>56,000</td>
+                </tr>
+                <tr>
+                    <td>게임</td>
+                    <td>드래곤퀘스트11</td>
+                    <td>1</td>
+                    <td>40,000</td>
+                    <td>40,000</td>
+                </tr>            
+                <tr>
+                    <td>게임</td>
+                    <td>배틀그라운드</td>
+                    <td>2</td>
+                    <td>20,000</td>
+                    <td>40,000</td>
+                </tr>
+                <tr>
+                    <td>게임</td>
+                    <td>오버워치</td>
+                    <td>1</td>
+                    <td>32,000</td>
+                    <td>32,000</td>
+                </tr>
+                <tr>
+                    <td>게임</td>
+                    <td>스타크래프트2</td>
+                    <td>2</td>
+                    <td>28,000</td>
+                    <td>56,000</td>
+                </tr>
+                <tr>
+                    <td>게임</td>
+                    <td>드래곤퀘스트11</td>
+                    <td>1</td>
+                    <td>40,000</td>
+                    <td>40,000</td>
+                </tr>                
+            </table>
+        </div>
+    </div>
+
+    <script>
+            $(window).scroll(function(){
+             $(".table1").css("left",0-$(this).scrollLeft());
+            })
+           </script>

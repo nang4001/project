@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>driverCodeAdd</title>
+    
+     
+</head>
+<body>
+            
+
+
+
+
+            <style>
+                * {margin:0; padding:0;}
+                .wrap{width:100%; height: auto; border:0px solid #00c;  color:rgb(0, 0, 0);
+                         position: relative;}    
+                .table1, .table2{border:1px solid #000; width:100%; background:#ffffff;
+                                 text-align: center; font-size: 20px;}        
+                .table1 th{background:#2fa0fd; color: rgb(255, 255, 255);}
+                .table1 th,.table2 td{border:1px solid rgba(0, 0, 0, 0.596); height:20px;}    
+                .wrap .table1{position: fixed; width:inherit; z-index: 100;}
+                .table2{position: absolute; top:28px; width:inherit;}
+                .tbwid_10{width:10%;}
+                .tbwid_20{width:20%;}
+                .tbwid_30{width:30%;}
+            </style>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+            
+
+
+            <div class="wrap">  
+                
+                <header>
+                    <h4>
+                        <select id="driverCode" name="기사코드" class="sel" aria-label="기사코드">
+                            <option value="">0.기사코드</option>
+                            <option value="">1.기사명</option> 
+                        </select>
+        
+                        <input type="text" name="name" size="10px">
+                        기준일자 <input type="date" id="end" name="trip-start"
+                        value="2022-12-31"
+                        min="1900-01-01" max="2100-12-31" required >
+                        <input type="submit" value="검색">
+                    </h4>
+
+                </header>
+                
+                <table class="table1" cellpadding=0 cellspacing=0 border=0>                                
+                    <tr>
+                        <th class="tbwid_20">기사코드</th>
+                        <th class="tbwid_30">기사명</th>
+                        <th class="tbwid_10">시작일</th>
+                        <th class="tbwid_20">종료일</th>
+                        <th class="tbwid_20">사용여부</th>
+                    </tr>    
+                </table>                            
+                <table class="table2" cellpadding=0 cellspacing=0 border=0>                                
+                    <tr>
+                        <td class="tbwid_20"></th>
+                        <td class="tbwid_30"></td>
+                        <td class="tbwid_10"></td>
+                        <td class="tbwid_20"></td>
+                        <td class="tbwid_20"></td>
+                    </tr>            
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                                    
+                </table>
+            </div>
+        </div>
+    
+        <script>
+                $(window).scroll(function(){
+                 $(".table1").css("left",0-$(this).scrollLeft());
+                })
+        </script>        
+</body>
+</html>
