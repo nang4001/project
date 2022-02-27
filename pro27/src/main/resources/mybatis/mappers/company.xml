@@ -34,4 +34,33 @@
 			select * from company
 		]]>
 	</select>
+	
+	<insert id="insertCompany" parameterType="companyVO">
+		<![CDATA[
+			insert into company(comName, classification, tax, cardinal, startDate, endDate, BRNum, CRNum, CEOName, forign, residentNum, zipCode, 
+								address, addressDetails, areaCode, comNumber,faxAreaCode, faxNumber, businessCondition, businessType, 
+								foundationDate, openDate, closeDate)
+						values(#{comName}, #{classification}, #{tax}, #{cardinal}, #{startDate}, #{endDate},
+								#{BRNum}, #{CRNum}, #{CEOName}, #{forign}, #{residentNum}, #{zipCode}, 
+								#{address}, #{addressDetails}, #{areaCode}, #{comNumber}, #{faxAreaCode}, #{faxNumber}, #{businessCondition}, #{businessType}, 
+								#{foundationDate}, #{openDate}, #{closeDate})
+		]]>
+	</insert>
+	
+	<delete id="deleteCompany" parameterType="companyVO">
+		<![CDATA[
+			delete from company
+		]]>
+	</delete>
+	
+	<update id="updateCompany" parameterType="companyVO">
+		<![CDATA[
+			update company
+			set comName=#{comName}, classification=#{classification}, tax=#{tax}, cardinal=#{cardinal}, startDate=#{startDate}, endDate=#{endDate},
+				BRNum=#{BRNum}, CRNum=#{CRNum}, CEOName=#{CEOName}, forign=#{forign}, residentNum=#{residentNum}, zipCode=#{zipCode}, 
+				address=#{address}, addressDetails=#{addressDetails}, areaCode=#{areaCode}, comNumber=#{comNumber}, 
+				faxAreaCode=#{faxAreaCode}, faxNumber=#{faxNumber}, businessCondition=#{businessCondition}, businessType=#{businessType}, 
+				foundationDate=#{foundationDate}, openDate=#{openDate}, closeDate=#{closeDate}
+		]]>
+	</update>
 </mapper>

@@ -36,11 +36,13 @@
         	</select>
         사원명 <input type="text" name="search"> <input type="submit" value="검색">
     </form>
-    <form id="bottom" method="get" action="${contextPath }/member/insertEmp.do">
-    	<input type="submit" value="등록">
+    <form id="bottom" method="get">
+    	<input type="submit" class="button" value="삭제" onclick="javascript: form.action='${contextPath}/member/deleteEmp.do';"/>
+    	<input type="submit" class="button" value="수정" onclick="javascript: form.action='${contextPath}/member/updateEmp.do';"/>
+        <input type="submit" class="button" value="등록" onclick="javascript: form.action='${contextPath}/member/insertEmp.do';"/><br><br>
         <table align="center"  width="800px" border="1px solid">
             <tr bgcolor="lightblue" width="800px" align="center">
-                <td></td>
+                <td align="center"><input type="checkbox">
                 <td>사원코드</td>
                 <td>사원명</td>
                 <td>부서코드</td>
@@ -49,37 +51,27 @@
                 <td>퇴사일</td>
             </tr>
             <c:forEach var="emp" items="${empList }">
-            <tr>
+            	<tr>
                 <td align="center"><input type="checkbox"></td>
-                <td>${emp.empNo }</td>
-                <td>${emp.eName}</td>
-                <td>${emp.deptNo}</td>
-                <td>${emp.dName}</td>
-                <td>${emp.joinDate }</td>
-                <td>${emp.outDate }</td>
+                <td><input type="text" value="${emp.empNo }"></td>
+                <td><input type="text" value="${emp.eName }"></td>
+                <td><input type="text" value="${emp.deptNo }"></td>
+                <td><input type="text" value="${emp.dName }"></td>
+                <td><input type="text" value="${emp.joinDate }"></td>
+                <td><input type="text" value="${emp.outDate }"></td>
             </tr>
             </c:forEach>
             <tr>
             	<td align="center"><input type="checkbox"></td>
                 <td><input type="text" name="empNo"></td>
                 <td><input type="text" name="eName"></td>
-                <td>
-                	<select name="deptNo">
-                		<option value="10">10</option>
-                		<option value="20">20</option>
-                		<option value="30">30</option>
-            			<option value="40">40</option>
-        			</select>
-        		</td>
-        		
-                <td>
-                	<select name="dName">
+                <td><input type="text" name="deptNo"></td>
+                <td><select name="dName">
                 		<option value="ONSITE">ONSITE</option>
                 		<option value="ACCOUNTING">ACCOUNTING</option>
                 		<option value="SALES">SALES</option>
             			<option value="RESEARCH">RESEARCH</option>
-        			</select>
-        		</td>
+        			</select></td>
                 <td><input type="date" name="joinDate"></td>
                 <td><input type="date" name=""></td>
             </tr>

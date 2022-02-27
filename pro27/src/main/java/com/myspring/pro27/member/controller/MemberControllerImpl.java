@@ -25,6 +25,7 @@ import com.myspring.pro27.member.vo.DeptVO;
 import com.myspring.pro27.member.vo.EmpVO;
 import com.myspring.pro27.member.vo.ItemVO;
 import com.myspring.pro27.member.vo.MemberVO;
+import com.myspring.pro27.member.vo.QualityTestVO;
 
 
 
@@ -42,19 +43,7 @@ public class MemberControllerImpl   implements MemberController {
 	private ItemVO itemVO;
 	
 	@Override
-	@RequestMapping(value = "/member/company.do", method = RequestMethod.GET)
-	public ModelAndView company(CompanyVO company, RedirectAttributes rAttr, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		String viewName = getViewName(request);
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName(viewName);
-		String site = mav.getViewName();
-		System.out.println("getViewName�� " + site + " �엯�땲�떎.");
-		return mav;
-	}
-	
-	@Override
-	@RequestMapping(value="/member/qualityTest.do" ,method = RequestMethod.GET)
+	@RequestMapping(value="/member/qualityTest.do" )
 	public ModelAndView qualityTest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
 		logger.info("viewName: "+ viewName);
@@ -66,7 +55,7 @@ public class MemberControllerImpl   implements MemberController {
 	}
 	
 	@Override
-	@RequestMapping(value="/member/itemInfo.do" ,method = RequestMethod.GET)
+	@RequestMapping(value="/member/itemInfo.do" )
 	public ModelAndView itemInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
 		System.out.println("viewName: " +viewName);
@@ -253,6 +242,30 @@ public class MemberControllerImpl   implements MemberController {
 	}
 
 	@Override
+	@RequestMapping(value="/member/insertCar.do")
+	public ModelAndView insertCar(CarVO carVO, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("html/text;charset=utf-8");
+		int result = 0;
+		result = memberService.insertCar(carVO);
+		ModelAndView mav = new ModelAndView("redirect:/member/carList.do");
+		return mav;
+	}
+	
+	@Override
+	@RequestMapping(value="/member/insertQuality.do")
+	public ModelAndView insertQuality(QualityTestVO qualityTestVO, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("html/text;charset=utf-8");
+		int result = 0;
+		result = memberService.insertQuality(qualityTestVO);
+		ModelAndView mav = new ModelAndView("redirect:/member/qualityTest.do");
+		return mav;
+	}
+	
+	@Override
 	@RequestMapping(value="/member/insertDept.do", method = RequestMethod.GET)
 	public ModelAndView insertDept(@ModelAttribute("dept") DeptVO deptVO, HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -277,17 +290,51 @@ public class MemberControllerImpl   implements MemberController {
 	}
 
 	@Override
-	@RequestMapping(value="/member/insertCar.do")
-	public ModelAndView insertCar(CarVO carVO, HttpServletRequest request, HttpServletResponse response)
+	@RequestMapping(value="/member/insertCompany.do", method=RequestMethod.GET)
+	public ModelAndView insertCompany(@ModelAttribute("company")CompanyVO companyVO, RedirectAttributes rAttr, HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("html/text;charset=utf-8");
+		int result = 0;
+		result = memberService.insertCompany(companyVO);
+		ModelAndView mav = new ModelAndView("redirect:/member/companyInfo.do");
+		return mav;
+	}
+
+	@Override
+	@RequestMapping(value="/member/deleteCompany.do", method=RequestMethod.GET)
+	public ModelAndView deleteCompany(CompanyVO companyVO, HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("html/text;charset=utf-8");
 		int result = 0;
-		result = memberService.insertCar(carVO);
-		ModelAndView mav = new ModelAndView("redirect:/member/carList.do");
+		result = memberService.deleteCompany(companyVO);
+		ModelAndView mav = new ModelAndView("redirect:/member/companyInfo.do");
 		return mav;
 	}
-	
-	
+
+	@Override
+	@RequestMapping(value="/member/updateCompany.do", method=RequestMethod.GET)
+	public ModelAndView updateCompany(CompanyVO companyVO, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("html/text;charset=utf-8");
+		int result = 0;
+		result = memberService.updateCompany(companyVO);
+		ModelAndView mav = new ModelAndView("redirect:/member/companyInfo.do");
+		return mav;
+	}
+
+	@Override
+	@RequestMapping(value="/member/updateEmp.do", method=RequestMethod.GET)
+	public ModelAndView updateEmp(EmpVO empVO, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("html/text;charset=utf-8");
+		int result = 0;
+		result = memberService.updateEmp(empVO);
+		ModelAndView mav = new ModelAndView("redirect:/member/empList.do");
+		return mav;
+	}
 	
 }

@@ -15,6 +15,7 @@ import com.myspring.pro27.member.vo.DeptVO;
 import com.myspring.pro27.member.vo.EmpVO;
 import com.myspring.pro27.member.vo.ItemVO;
 import com.myspring.pro27.member.vo.MemberVO;
+import com.myspring.pro27.member.vo.QualityTestVO;
 
 @Service("memberService")
 @Transactional(propagation = Propagation.REQUIRED)
@@ -97,5 +98,30 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int insertCar(CarVO carVO) throws DataAccessException {
 		return memberDAO.insertCar(carVO);
+	}
+
+	@Override
+	public int insertCompany(CompanyVO companyVO) throws DataAccessException {
+		return memberDAO.insertCompany(companyVO);
+	}
+	
+	@Override
+	public int insertQuality(QualityTestVO qualityTestVO) throws DataAccessException {
+		return memberDAO.insertQuality(qualityTestVO);
+	}
+	
+	@Override
+	public int deleteCompany(CompanyVO companyVO) throws DataAccessException {
+		return memberDAO.deleteCompany(companyVO);
+	}
+
+	@Override
+	public int updateCompany(CompanyVO companyVO) throws DataAccessException {
+		return memberDAO.updateCompany(companyVO);
+	}
+
+	@Override
+	public int updateEmp(EmpVO empVO) throws DataAccessException {
+		return memberDAO.updateEmp(empVO);
 	}
 }

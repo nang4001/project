@@ -13,7 +13,7 @@
 <body>
 <input type="submit" value="등록">
 	<div id="wrap">
-        <form align="center" method="post">
+        <form align="center" width="800px" method="post">
         	<c:if test="${item != null }">
 	            <h4>품번 <input type="text" name="itemCode" size="10px" value="${item.itemCode }" ></h4>
 	            <h4>품명 <input type="text" name="itemName" size="10px" value="${item.itemName }" ></h4>

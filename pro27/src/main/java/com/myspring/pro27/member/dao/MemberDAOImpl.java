@@ -14,6 +14,7 @@ import com.myspring.pro27.member.vo.DeptVO;
 import com.myspring.pro27.member.vo.EmpVO;
 import com.myspring.pro27.member.vo.ItemVO;
 import com.myspring.pro27.member.vo.MemberVO;
+import com.myspring.pro27.member.vo.QualityTestVO;
 
 @Repository("memberDAO")
 public class MemberDAOImpl implements MemberDAO {
@@ -97,6 +98,36 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public int insertCar(CarVO carVO) throws DataAccessException {
 		int result = sqlSession.insert("mapper.car.insertCar", carVO);
+		return result;
+	}
+
+	@Override
+	public int insertCompany(CompanyVO companyVO) throws DataAccessException {
+		int result = sqlSession.insert("mapper.company.insertCompany", companyVO);
+		return result;
+	}
+	
+	@Override
+	public int insertQuality(QualityTestVO qualityTestVO) throws DataAccessException {
+		int result = sqlSession.insert("mapper.quality.insertQuality", qualityTestVO);
+		return result;
+	}
+	
+	@Override
+	public int deleteCompany(CompanyVO companyVO) throws DataAccessException {
+		int result = sqlSession.delete("mapper.company.deleteCompany", companyVO);
+		return result;
+	}
+
+	@Override
+	public int updateCompany(CompanyVO companyVO) throws DataAccessException {
+		int result = sqlSession.update("mapper.company.updateCompany", companyVO);
+		return result;
+	}
+
+	@Override
+	public int updateEmp(EmpVO empVO) throws DataAccessException {
+		int result = sqlSession.update("mapper.emp.updateEmp", empVO);
 		return result;
 	}
 }
