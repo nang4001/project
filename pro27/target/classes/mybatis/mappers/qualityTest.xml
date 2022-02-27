@@ -26,10 +26,10 @@
 		]]>
 	</select>
 	
-	<insert id="insertQuality"  parameterType="qualityVO">
+	<insert id="insertQuality"  parameterType="qualityTestVO">
 		<![CDATA[
 		 	insert into quality(itemCode ,itemName, quantity, testDate, testResult, lotNo, serialNo)
-		 				values(#{itemCode}, #{itemName}, #{quantity}, #{testDate}, #{lotNo}, #{testResult}, #{serialNo})
+		 				values(#{itemCode}, #{itemName}, #{quantity}, #{testDate}, #{testResult}, #{lotNo}, #{serialNo})
 		]]>      
 	</insert>
 </mapper>

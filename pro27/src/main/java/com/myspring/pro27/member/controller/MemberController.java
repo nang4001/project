@@ -13,6 +13,7 @@ import com.myspring.pro27.member.vo.CompanyVO;
 import com.myspring.pro27.member.vo.DeptVO;
 import com.myspring.pro27.member.vo.EmpVO;
 import com.myspring.pro27.member.vo.MemberVO;
+import com.myspring.pro27.member.vo.QualityTestVO;
 
 public interface MemberController {
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception;
@@ -34,4 +35,5 @@ public interface MemberController {
 	public ModelAndView insertDept(@ModelAttribute("dept") DeptVO deptVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView insertEmp(@ModelAttribute("emp") EmpVO empVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView insertCar(CarVO carVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView insertQuality(QualityTestVO qualityTestVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

@@ -27,21 +27,13 @@ public class QualityTestVO {
 	}
 	
 	public QualityTestVO(String customerCode,String customerName,String itemCode,String itemName,String lotNo,int quantity,String serialNo,String storageCode,String storageName,Date testDate,String testResult,int unitPrice,String userName,Date writeDate) {
-		this.setCustomerCode(customerCode);
-		this.setCustomerName(customerName);
-		this.setItemCode(itemCode);
-		this.setItemName(itemName);
-		this.setLotNo(lotNo);
-		this.setQuantity(quantity);
-		this.setSerialNo(serialNo);
-		this.setStorageCode(storageCode);
-		this.setStorageName(storageName);
-		this.setTestDate(testDate);
-		this.setTestResult(testResult);
-		this.setUnitPrice(unitPrice);
-		this.setUserName(userName);
-		this.setWriteDate(writeDate);
+		
 	}
+	
+	public QualityTestVO(String itemCode,String itemName,int quantity,Date testDate, String testResult, String lotNo, String serialNo) {
+		
+	}
+	
 
 	public String getCustomerCode() {
 		return customerCode;

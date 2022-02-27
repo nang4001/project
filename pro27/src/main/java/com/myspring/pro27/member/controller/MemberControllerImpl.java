@@ -25,6 +25,7 @@ import com.myspring.pro27.member.vo.DeptVO;
 import com.myspring.pro27.member.vo.EmpVO;
 import com.myspring.pro27.member.vo.ItemVO;
 import com.myspring.pro27.member.vo.MemberVO;
+import com.myspring.pro27.member.vo.QualityTestVO;
 
 
 
@@ -54,7 +55,7 @@ public class MemberControllerImpl   implements MemberController {
 	}
 	
 	@Override
-	@RequestMapping(value="/member/qualityTest.do" ,method = RequestMethod.GET)
+	@RequestMapping(value="/member/qualityTest.do" )
 	public ModelAndView qualityTest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
 		logger.info("viewName: "+ viewName);
@@ -66,7 +67,7 @@ public class MemberControllerImpl   implements MemberController {
 	}
 	
 	@Override
-	@RequestMapping(value="/member/itemInfo.do" ,method = RequestMethod.GET)
+	@RequestMapping(value="/member/itemInfo.do" )
 	public ModelAndView itemInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
 		System.out.println("viewName: " +viewName);
@@ -285,6 +286,18 @@ public class MemberControllerImpl   implements MemberController {
 		int result = 0;
 		result = memberService.insertCar(carVO);
 		ModelAndView mav = new ModelAndView("redirect:/member/carList.do");
+		return mav;
+	}
+	
+	@Override
+	@RequestMapping(value="/member/insertQuality.do")
+	public ModelAndView insertQuality(QualityTestVO qualityTestVO, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("html/text;charset=utf-8");
+		int result = 0;
+		result = memberService.insertQuality(qualityTestVO);
+		ModelAndView mav = new ModelAndView("redirect:/member/qualityTest.do");
 		return mav;
 	}
 	

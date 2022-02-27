@@ -10,6 +10,7 @@ import com.myspring.pro27.member.vo.DeptVO;
 import com.myspring.pro27.member.vo.EmpVO;
 import com.myspring.pro27.member.vo.ItemVO;
 import com.myspring.pro27.member.vo.MemberVO;
+import com.myspring.pro27.member.vo.QualityTestVO;
 
 
 public interface MemberDAO {
@@ -26,4 +27,5 @@ public interface MemberDAO {
 	 public int insertDept(DeptVO deptVO) throws DataAccessException;
 	 public int insertEmp(EmpVO empVO) throws DataAccessException;
 	 public int insertCar(CarVO carVO) throws DataAccessException;
+	 public int insertQuality(QualityTestVO qualityTestVO) throws DataAccessException;
 }
