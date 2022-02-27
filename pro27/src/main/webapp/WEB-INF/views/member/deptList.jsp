@@ -17,7 +17,7 @@
     <form method="get">
 	<input type="submit" class="button" value="삭제" onclick="javascript: form.action='${contextPath}/member/deleteDept.do';"/>
     <input type="submit" class="button" value="수정" onclick="javascript: form.action='${contextPath}/member/updateDept.do';"/>
-    <input type="submit" class="button" value="등록" onclick="javascript: form.action='${contextPath}/member/inserteDept.do';"/><br><br>    	
+    <input type="submit" class="button" value="등록" onclick="javascript: form.action='${contextPath}/member/insertDept.do';"/><br><br>    	
         <table align="center">
             <tr bgcolor="lightblue" align="center">
                 <td>부서코드</td>

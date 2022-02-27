@@ -41,43 +41,6 @@
             height: 600px;
             border: 1px saddlebrown solid;
             float: left;
-            
-            
-        }
-        #right-side > p {
-        	width: auto;
-        	border: 1px white solid;
-            float: left;
-            
-        }
-</style>
-<style>
-        #top {
-            margin: auto;
-            width: 800px;
-            height: 40px;
-            border: slateblue 1px solid;
-        }
-        #left-side {
-            margin: auto;
-            width: 40%;
-            height: 600px;
-            border: 1px saddlebrown solid;
-            float: left;
-        }
-        table {
-            width: auto;
-            <!-- 500px -->
-            border: 2px solid rgb(95, 95, 95);
-        }
-        table>tr>td {
-            text-align: center;
-        }
-        #right-side {
-            width: 37.5%;
-            height: 600px;
-            border: 1px saddlebrown solid;
-            float: left;
             text-align: center;
         }
         #right-side > p {
@@ -87,8 +50,6 @@
 </style>
 </head>
 <body>
-<div id="left-side">
-        <table align="center" border="1px solid">
 <form method="post" action="${contextPath}/member/qualityTest.do">
 <div id="left-side">
         <table align="center" border="1px solid">
@@ -116,22 +77,6 @@
             </c:forEach>
         </table>
     </div>
-    
-    <form method="post" action="${contextPath}/member/insertQuality.do">
-    	<div id="right-side" >
-    	
-        품목코드 <input type="text" name="itemCode"><br>
-        품목명 <input type="text" name="itemName"><br>
-        수량 <input type="text" name="quantity"><br>
-        검사일 <input type="text" name="testDate"><br>
-        검사결과 <input type="text" name="testResult"><br>
-        로트번호 <input type="text" name="lotNo"><br>
-        씨리얼번호 <input type="text" name="serialNo"><br>
-        
-        <p><input type="submit" value="등록"><p><br>
-    </div>
-   </form>
-    
 </form>
 
     <form method="post" action="${contextPath}/member/insertQuality.do">

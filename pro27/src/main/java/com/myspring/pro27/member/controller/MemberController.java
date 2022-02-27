@@ -32,11 +32,14 @@ public interface MemberController {
 	public ModelAndView insertCompany(@ModelAttribute("company") CompanyVO company,
             RedirectAttributes rAttr,
             HttpServletRequest request, HttpServletResponse response) throws Exception;
-	public ModelAndView deleteCompany(@ModelAttribute("company") CompanyVO companyVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
-	public ModelAndView updateCompany(@ModelAttribute("company") CompanyVO companyVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView updateCompany(CompanyVO companyVO, HttpServletRequest request, HttpServletResponse response)
+			throws Exception;
+	public ModelAndView deleteCompany(CompanyVO companyVO, HttpServletRequest request, HttpServletResponse response)
+			throws Exception;
 	public ModelAndView insertDept(@ModelAttribute("dept") DeptVO deptVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView insertEmp(@ModelAttribute("emp") EmpVO empVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
-	public ModelAndView updateEmp(@ModelAttribute("emp") EmpVO empVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView updateEmp(@ModelAttribute("emp") EmpVO empVO, HttpServletRequest request, HttpServletResponse response)
+			throws Exception;
 	public ModelAndView insertCar(CarVO carVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView insertQuality(QualityTestVO qualityTestVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

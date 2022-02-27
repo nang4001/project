@@ -42,6 +42,7 @@ public class MemberControllerImpl   implements MemberController {
 	@Autowired
 	private ItemVO itemVO;
 	
+	
 	@Override
 	@RequestMapping(value="/member/qualityTest.do" )
 	public ModelAndView qualityTest(HttpServletRequest request, HttpServletResponse response) throws Exception {
