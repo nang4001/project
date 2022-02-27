@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>
+	<typeAliases>
+		<typeAlias type="com.myspring.pro27.member.vo.MemberVO"  alias="memberVO" />
+		<typeAlias type="com.myspring.pro27.member.vo.CompanyVO" alias="companyVO" />
+		<typeAlias type="com.myspring.pro27.member.vo.EmpVO" alias="empVO"/>
+		<typeAlias type="com.myspring.pro27.member.vo.DeptVO" alias="deptVO"/>
+		<typeAlias type="com.myspring.pro27.member.vo.ItemVO" alias="itemVO"/>
+		<typeAlias type="com.myspring.pro27.member.vo.QualityTestVO" alias="qualityTestVO"/>
+		<typeAlias type="com.myspring.pro27.member.vo.CarVO" alias="carVO"/>
+	</typeAliases>
+</configuration>

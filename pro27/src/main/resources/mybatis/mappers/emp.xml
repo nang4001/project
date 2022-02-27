@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.emp">
+	<resultMap type="empVO" id="empResult">
+		<result property="deptNo" column="deptNo" />
+		<result property="dName" column="dName" />
+		<result property="empNo" column="empNo" />
+		<result property="eName" column="eName" />
+		<result property="empId" column="empId" />
+		<result property="empPw" column="empPw" />
+		<result property="residentNum" column="residentNum" />
+		<result property="joinDate" column="joinDate" />
+		<result property="outDate" column="outDate" />
+		<result property="zipCode" column="zipCode" />
+		<result property="address" column="address" />
+		<result property="addressDetails" column="addressDetails" />
+		<result property="phoneNum" column="phoneNum" />
+		<result property="fax" column="fax" />
+		<result property="email" column="email" />
+	</resultMap>
+	
+	<select id="selectAllEmpList" resultMap="empResult">
+		<![CDATA[
+			select * from emp order by deptNo
+		]]>
+	</select>
+	
+	<insert id="insertEmp" parameterType="empVO">
+		<![CDATA[
+			insert into emp (deptNo, dName, empNo, eName, empId, empPw, residentNum, joinDate, outDate, zipCode, address, addressDetails, phoneNum, fax, email)
+			values(#{deptNo}, #{dName}, #{empNo}, #{eName}, #{empId}, #{empPw}, #{residentNum}, #{joinDate}, #{outDate,jdbcType=DATE},
+					#{zipCode}, #{address}, #{addressDetails}, #{phoneNum}, #{fax}, #{email})
+		]]>
+	</insert>
+</mapper>

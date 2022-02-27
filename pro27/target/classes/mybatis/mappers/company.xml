@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.company">
+	<resultMap id="comResult" type="companyVO">
+		<result property="comName" column="comName" />
+		<result property="classification" column="classification" />
+		<result property="tax" column="tax" />
+		<result property="cardinal" column="cardinal" />
+		<result property="startDate" column="startDate" />
+		<result property="endDate" column="endDate" />
+		<result property="BRNum" column="BRNum" />
+		<result property="CRNum" column="CRNum" />
+		<result property="CEOName" column="CEOName" />
+		<result property="forign" column="forign" />
+		<result property="residentNum" column="residentNum" />
+		<result property="zipCode" column="zipCode" />
+		<result property="address" column="address" />
+		<result property="addressDetails" column="addressDetails" />
+		<result property="areaCode" column="areaCode" />
+		<result property="comNumber" column="comNumber" />
+		<result property="faxAreaCode" column="faxAreaCode" />
+		<result property="faxNumber" column="faxNumber" />
+		<result property="businessCondition" column="businessCondition" />
+		<result property="businessType" column="businessType" />
+		<result property="foundationDate" column="foundationDate" />
+		<result property="openDate" column="openDate" />
+		<result property="closeDate" column="closeDate" />
+	</resultMap>
+	
+	<select id="selectCompany" resultMap="comResult">
+		<![CDATA[
+			select * from company
+		]]>
+	</select>
+</mapper>

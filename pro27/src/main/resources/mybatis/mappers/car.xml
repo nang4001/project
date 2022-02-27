@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.car">
+	<resultMap type="carVO" id="carResult">
+		<result property="carCode" column="carCode" />
+		<result property="carName" column="carName" />
+		<result property="carNo" column="carNo" />
+		<result property="carWeight" column="carWeight" />
+	</resultMap>
+	
+	<select id="selectCarList" resultMap="carResult">
+		<![CDATA[
+			select * from car
+		]]>
+	</select>
+	
+	<insert id="insertCar"  parameterType="carVO">
+		<![CDATA[
+		 	insert into car(carCode ,carNo, carWeight, carName)
+		 				values(#{carCode}, #{carNo}, #{carWeight}, #{carName})
+		]]>      
+	</insert>
+</mapper>
