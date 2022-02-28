@@ -29,7 +29,7 @@ public interface MemberController {
 	public ModelAndView listDept(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView itemInfo(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView qualityTest(HttpServletRequest request, HttpServletResponse response) throws Exception;
-	public ModelAndView company(@ModelAttribute("company") CompanyVO company,
+	public ModelAndView insertCompany(@ModelAttribute("company") CompanyVO company,
             RedirectAttributes rAttr,
             HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView insertDept(@ModelAttribute("dept") DeptVO deptVO, HttpServletRequest request, HttpServletResponse response) throws Exception;

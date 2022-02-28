@@ -84,7 +84,7 @@
     </form>
     
     <form method="post" action="${contextPath}/member/insertCar.do">
-    	<div id="right-side">
+    <div id="right-side">
     	
         <p>차량 관리코드 <input type="text" name="carCode"></p>
         <p>차량NO <input type="text" name="carNo"></p>
