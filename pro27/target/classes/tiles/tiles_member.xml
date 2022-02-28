@@ -66,9 +66,4 @@
    		<put-attribute name="body" value="/WEB-INF/views/member/qualityTest.jsp"/>
    </definition>
    
-   <definition name="/member/company" extends="baseLayout">
-   		<put-attribute name="title" value="회사정보"/>
-   		<put-attribute name="body" value="/WEB-INF/views/member/companyInfo.jsp"/>
-   </definition>
-   
 </tiles-definitions>

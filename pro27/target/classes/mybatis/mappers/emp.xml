@@ -34,4 +34,12 @@
 					#{zipCode}, #{address}, #{addressDetails}, #{phoneNum}, #{fax}, #{email})
 		]]>
 	</insert>
+	
+	<update id="updateEmp" parameterType="empVO">
+		<![CDATA[
+			update emp
+			set deptNo=#{deptNo}, dName=#{dName}, eName=#{eName}, joinDate=#{joinDate}, outDate=#{outDate}
+			where empNo=#{empNo}
+		]]>
+	</update>
 </mapper>

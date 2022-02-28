@@ -100,10 +100,34 @@ public class MemberDAOImpl implements MemberDAO {
 		int result = sqlSession.insert("mapper.car.insertCar", carVO);
 		return result;
 	}
+
+	@Override
+	public int insertCompany(CompanyVO companyVO) throws DataAccessException {
+		int result = sqlSession.insert("mapper.company.insertCompany", companyVO);
+		return result;
+	}
 	
 	@Override
 	public int insertQuality(QualityTestVO qualityTestVO) throws DataAccessException {
 		int result = sqlSession.insert("mapper.quality.insertQuality", qualityTestVO);
+		return result;
+	}
+	
+	@Override
+	public int deleteCompany(CompanyVO companyVO) throws DataAccessException {
+		int result = sqlSession.delete("mapper.company.deleteCompany", companyVO);
+		return result;
+	}
+
+	@Override
+	public int updateCompany(CompanyVO companyVO) throws DataAccessException {
+		int result = sqlSession.update("mapper.company.updateCompany", companyVO);
+		return result;
+	}
+
+	@Override
+	public int updateEmp(EmpVO empVO) throws DataAccessException {
+		int result = sqlSession.update("mapper.emp.updateEmp", empVO);
 		return result;
 	}
 }

@@ -27,5 +27,9 @@ public interface MemberDAO {
 	 public int insertDept(DeptVO deptVO) throws DataAccessException;
 	 public int insertEmp(EmpVO empVO) throws DataAccessException;
 	 public int insertCar(CarVO carVO) throws DataAccessException;
+	 public int insertCompany(CompanyVO companyVO) throws DataAccessException;
 	 public int insertQuality(QualityTestVO qualityTestVO) throws DataAccessException;
+	 public int deleteCompany(CompanyVO companyVO) throws DataAccessException;
+	 public int updateCompany(CompanyVO companyVO) throws DataAccessException;
+	 public int updateEmp(EmpVO empVO) throws DataAccessException;
 }

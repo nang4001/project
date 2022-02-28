@@ -14,8 +14,10 @@
 </head>
 <body>
     <div id="form">
-    <form method="get" action="${contextPath }/member/insertDept.do">
-    	<input type="submit" value="등록">
+    <form method="get">
+	<input type="submit" class="button" value="삭제" onclick="javascript: form.action='${contextPath}/member/deleteDept.do';"/>
+    <input type="submit" class="button" value="수정" onclick="javascript: form.action='${contextPath}/member/updateDept.do';"/>
+    <input type="submit" class="button" value="등록" onclick="javascript: form.action='${contextPath}/member/insertDept.do';"/><br><br>    	
         <table align="center">
             <tr bgcolor="lightblue" align="center">
                 <td>부서코드</td>
@@ -26,7 +28,7 @@
             		<td>${dept.deptNo }</td>
             		<td>${dept.DName }</td>
             	</tr>
-            </c:forEach>
+    		</c:forEach>
             <tr align="center">
             	<td><input type="text" name="deptNo"></td>
             	<td><input type="text" name="dName"></td>
