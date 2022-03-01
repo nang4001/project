@@ -21,7 +21,7 @@ public interface MemberService {
 	 public CompanyVO companyInfo(CompanyVO companyVO) throws DataAccessException;
 	 public List listEmp() throws DataAccessException;
 	 public List listDept() throws DataAccessException;
-	 public ItemVO itemInfo(ItemVO itemVO) throws DataAccessException;
+	 public List itemInfo() throws DataAccessException;
 	 public List qualityTest() throws DataAccessException;
 	 public int insertDept(DeptVO deptVO) throws DataAccessException;
 	 public int insertEmp(EmpVO empVO) throws DataAccessException;
@@ -30,5 +30,7 @@ public interface MemberService {
 	 public int insertQuality(QualityTestVO qualityTestVO) throws DataAccessException;
 	 public int deleteCompany(CompanyVO companyVO) throws DataAccessException;
 	 public int updateCompany(CompanyVO companyVO) throws DataAccessException;
-	 public int updateEmp(EmpVO empVO) throws DataAccessException; 
+	 public int updateEmp(EmpVO empVO) throws DataAccessException;
+	 public int insertItem(ItemVO itemVO) throws DataAccessException;
+	 public int updateCar(String carCode) throws DataAccessException; 
 }

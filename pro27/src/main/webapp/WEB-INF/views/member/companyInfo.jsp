@@ -10,7 +10,11 @@
 <meta charset="UTF-8">
     <title>companyInfo</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
+    <!-- <script type="text/javascript">
+    	$(function() {
+    		$("classification").val("<?=$classification?>");
+    	});
+    </script> -->
 </head>
 <body>
     <div id="wrap">
@@ -22,27 +26,27 @@
 	        	<h2>회사명 <input type="text" name="comName" size="20px" value="${company.comName }" >
 	        	<input type="text" name="classification" size="7px" value="${company.classification }" >
 	        	<input type="text" name="tax" size="7px" value="${company.tax }" >
-	            <!-- <select id="classification" name="classification" class="sel" aria-label="구분" value="${company.classification }">
+	            <%-- <select id="classification" name="classification" class="sel" aria-label="구분" value="${company.classification }">
 	                <option value="">구분</option>
-	                <option value="simpleTaxpayer">
+	                <option value="일반-간이">
 	                    일반-간이
 	                </option>
-	                <option value="generalTaxpayer">
+	                <option value="일반-개인">
 	                    일반-개인
 	                </option>
-	                <option value="corporation">
+	                <option value="법인">
 	                    법인
 	                </option>
 	            </select>
 	            <select id="tax" name="tax" class="sel" aria-label="과세" value="${company.tax }">
 	            	<option value="">구분</option>
-	                <option value="taxation">
+	                <option value="과세">
 	                	과세
 	                </option>
-	                <option value="taxExemption">
+	                <option value="면세">
 	                    면세
 	                </option>
-	            </select> -->
+	            </select> --%>
 	            </h2>
 	            
 	            <h4>회계년도 제 <input type="text" name="cardinal" id="cardinal" size="1px" value="${company.cardinal }" >기
@@ -105,7 +109,7 @@
         	</c:if>
             <c:if test="${company == null }">
             	<h2>회사명 <input type="text" name="comName" size="20px">
-	            <select name="classification" class="sel" aria-label="구분">
+	            <select name="classification" id="classification" class="sel" aria-label="구분">
 	                <option value="">구분</option>
 	                <option value="일반-간이">
 	                    일반-간이

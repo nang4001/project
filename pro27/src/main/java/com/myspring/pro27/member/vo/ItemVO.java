@@ -25,6 +25,18 @@ public class ItemVO {
 		
 	}
 
+	public ItemVO(String itemCode,String itemName,String lotNo,Date orderDate,int quantity,String serialNo,int unitPrice, int vat) {
+		this.setItemCode(itemCode);
+		this.setItemName(itemName);
+		this.setLotNo(lotNo);
+		this.setOrderDate(orderDate);
+		this.setQuantity(quantity);
+		this.setSerialNo(serialNo);
+		this.setUnitPrice(unitPrice);
+		this.setVat(vat);
+	}
+	
+	
 	public ItemVO(String itemCode,String itemName,String lotNo,Date orderDate,int price,int quantity,String serialNo,String storageCode,String storageName,int supplyPrice,String unit,int unitPrice, int vat) {
 		this.setItemCode(itemCode);
 		this.setItemName(itemName);

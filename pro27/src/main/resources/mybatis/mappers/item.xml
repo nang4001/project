@@ -19,9 +19,16 @@
 		<result property="vat" column="vat" />
 	</resultMap>
 	
-	<select id="selectItem" resultMap="itemResult">
+	<select id="selectItemList" resultMap="itemResult">
 		<![CDATA[
 			select * from item
 		]]>
 	</select>
+	
+	<insert id="insertItem"  parameterType="itemVO">
+		<![CDATA[
+		 	insert into item(itemCode ,itemName, lotNo, orderDate, quantity, serialNo, unitPrice, vat)
+		 				values(#{itemCode}, #{itemName}, #{lotNo}, #{orderDate}, #{quantity}, #{serialNo}, #{unitPrice}, #{vat})
+		]]>      
+	</insert>
 </mapper>

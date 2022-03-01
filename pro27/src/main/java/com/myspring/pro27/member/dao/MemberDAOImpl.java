@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.myspring.pro27.member.vo.CarVO;
 import com.myspring.pro27.member.vo.CompanyVO;
@@ -29,8 +30,10 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 	
 	@Override
-	public ItemVO itemInfo(ItemVO itemVO) throws DataAccessException {
-		return sqlSession.selectOne("mapper.item.selectItem");
+	public List selectItemList() throws DataAccessException {
+		List itemVO = null;
+		itemVO = sqlSession.selectList("mapper.item.selectItemList");
+		return itemVO;
 	}
 	
 	@Override
@@ -114,6 +117,12 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 	
 	@Override
+	public int insertItem(ItemVO itemVO) throws DataAccessException {
+		int result = sqlSession.insert("mapper.item.insertItem", itemVO);
+		return result;
+	}
+	
+	@Override
 	public int deleteCompany(CompanyVO companyVO) throws DataAccessException {
 		int result = sqlSession.delete("mapper.company.deleteCompany", companyVO);
 		return result;
@@ -128,6 +137,18 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public int updateEmp(EmpVO empVO) throws DataAccessException {
 		int result = sqlSession.update("mapper.emp.updateEmp", empVO);
+		return result;
+	}
+	
+//	@Override
+//	public int deleteCar(CarVO carVO) throws DataAccessException {
+//		int result = sqlSession.delete("mapper.company.deleteCompany", companyVO);
+//		return result;
+//	}
+
+	@Override
+	public int updateCar(String carCode) throws DataAccessException {
+		int result = sqlSession.update("mapper.car.updateCar", carCode);
 		return result;
 	}
 }

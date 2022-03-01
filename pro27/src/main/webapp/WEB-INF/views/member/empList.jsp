@@ -37,7 +37,7 @@
         사원명 <input type="text" name="search"> <input type="submit" value="검색">
     </form>
     <form id="bottom" method="get">
-    	<input type="submit" class="button" value="삭제" onclick="javascript: form.action='${contextPath}/member/deleteEmp.do';"/>
+    	<input type="submit" class="button" value="삭제" onclick="javascript: form.action='${contextPath}/member/deleteEmp.do?';"/>
     	<input type="submit" class="button" value="수정" onclick="javascript: form.action='${contextPath}/member/updateEmp.do';"/>
         <input type="submit" class="button" value="등록" onclick="javascript: form.action='${contextPath}/member/insertEmp.do';"/><br><br>
         <table align="center"  width="800px" border="1px solid">
@@ -53,10 +53,10 @@
             <c:forEach var="emp" items="${empList }">
             	<tr>
                 <td align="center"><input type="checkbox"></td>
-                <td><input type="text" value="${emp.empNo }"></td>
-                <td><input type="text" value="${emp.eName }"></td>
+                <td><input type="text" id="${emp.empNO }" value="${emp.empNo }"></td>
+                <td><input type="text" value="${emp.EName }"></td>
                 <td><input type="text" value="${emp.deptNo }"></td>
-                <td><input type="text" value="${emp.dName }"></td>
+                <td><input type="text" value="${emp.DName }"></td>
                 <td><input type="text" value="${emp.joinDate }"></td>
                 <td><input type="text" value="${emp.outDate }"></td>
             </tr>
@@ -64,9 +64,9 @@
             <tr>
             	<td align="center"><input type="checkbox"></td>
                 <td><input type="text" name="empNo"></td>
-                <td><input type="text" name="eName"></td>
+                <td><input type="text" name="EName"></td>
                 <td><input type="text" name="deptNo"></td>
-                <td><select name="dName">
+                <td><select name="DName">
                 		<option value="ONSITE">ONSITE</option>
                 		<option value="ACCOUNTING">ACCOUNTING</option>
                 		<option value="SALES">SALES</option>

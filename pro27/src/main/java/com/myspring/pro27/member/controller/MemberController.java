@@ -12,6 +12,7 @@ import com.myspring.pro27.member.vo.CarVO;
 import com.myspring.pro27.member.vo.CompanyVO;
 import com.myspring.pro27.member.vo.DeptVO;
 import com.myspring.pro27.member.vo.EmpVO;
+import com.myspring.pro27.member.vo.ItemVO;
 import com.myspring.pro27.member.vo.MemberVO;
 import com.myspring.pro27.member.vo.QualityTestVO;
 
@@ -42,4 +43,6 @@ public interface MemberController {
 			throws Exception;
 	public ModelAndView insertCar(CarVO carVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView insertQuality(QualityTestVO qualityTestVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView insertItem(ItemVO itemVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ModelAndView updateCar(@RequestParam("carCode") String carCode, HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

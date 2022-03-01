@@ -22,4 +22,19 @@
 		 				values(#{carCode}, #{carNo}, #{carWeight}, #{carName})
 		]]>      
 	</insert>
+	
+	<delete id="deleteCompany" parameterType="companyVO">
+		<![CDATA[
+			delete from company
+		]]>
+	</delete>
+	
+	<update id="updateCar" parameterType="String">
+		<![CDATA[
+			update car
+			set carCode=#{carCode}, carNo=#{carNo}, carWeight=#{carWeight}, carName=#{carName}
+			where
+	     	carCode=#{carCode}
+		]]>
+	</update>
 </mapper>

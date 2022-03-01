@@ -7,6 +7,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.myspring.pro27.member.dao.MemberDAO;
 import com.myspring.pro27.member.vo.CarVO;
@@ -31,8 +32,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public ItemVO itemInfo(ItemVO itemVO) throws DataAccessException {
-		itemVO = memberDAO.itemInfo(itemVO);
+	public List itemInfo() throws DataAccessException {
+		List itemVO = null;
+		itemVO = memberDAO.selectItemList();
 		return itemVO;
 	}
 	
@@ -111,6 +113,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
+	public int insertItem(ItemVO itemVO) throws DataAccessException {
+		return memberDAO.insertItem(itemVO);
+	}
+	
+	@Override
 	public int deleteCompany(CompanyVO companyVO) throws DataAccessException {
 		return memberDAO.deleteCompany(companyVO);
 	}
@@ -123,5 +130,15 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int updateEmp(EmpVO empVO) throws DataAccessException {
 		return memberDAO.updateEmp(empVO);
+	}
+	
+//	@Override
+//	public int deleteCar(CarVO carVO) throws DataAccessException {
+//		return memberDAO.deleteCompany(companyVO);
+//	}
+
+	@Override
+	public int updateCar(String carCode) throws DataAccessException {
+		return memberDAO.updateCar(carCode);
 	}
 }

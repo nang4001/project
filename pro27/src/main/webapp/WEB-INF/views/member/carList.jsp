@@ -6,12 +6,14 @@
 <%
    request.setCharacterEncoding("UTF-8");
 %> 
+
+
 <html>
 <head>
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>차량관리</title>
+<title>Insert title here</title>
 <style>
         #top {
             margin: auto;
@@ -45,6 +47,10 @@
             float: left;
         }
 </style>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript">
+	
+	</script>
 </head>
 <body>
 	<div id="top">
@@ -61,8 +67,9 @@
     
     <form method="post" action="${contextPath }/member/carList.do">
     <div id="left-side">
+    
         <table align="center" border="1px solid">
-            <tr bgcolor="lightblue">
+            <tr align="center" bgcolor="lightblue">
                 <td>선택</td>
                 <td>차량 관리코드</td>
                 <td>차량 NO</td>
@@ -71,7 +78,9 @@
             </tr>
             <c:forEach var="car" items="${listCar }">
             <tr>
-            	<td align="center"><input type="checkbox"></td>
+            	<td align="center">
+            	<!-- <input type="checkbox"> -->
+            	<input type="checkbox" value="${car.carCode}"></td>
             	<td>${car.carCode }</td>
             	<td>${car.carNo }</td>
             	<td>${car.carWeight }</td>
@@ -84,8 +93,11 @@
     </form>
     
     <form method="post" action="${contextPath}/member/insertCar.do">
-    <div id="right-side">
-    	
+    	<div id="right-side">
+    	<input type="submit" class="button" value="삭제" onclick="javascript: form.action='${contextPath}/member/deleteCar.do';"/>
+    	<input type="submit" class="button" value="수정" onclick="javascript: form.action='${contextPath}/member/updateCar.do';"/>
+    	<input type="submit" class="button" value="등록" onclick="javascript: form.action='${contextPath}/member/insertCar.do';"/><br><br>
+    
         <p>차량 관리코드 <input type="text" name="carCode"></p>
         <p>차량NO <input type="text" name="carNo"></p>
         <p>차량 크기
@@ -96,7 +108,6 @@
             	<option value="10톤 화물차량">10톤 화물차량</option>
             </select></p>
         <p>비고 <input type="text" name="carName"></p>
-        <p><input type="submit" value="등록"><p>
     </div>
    </form>
    
