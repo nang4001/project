@@ -1,5 +1,6 @@
 package com.myspring.pro27.member.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
@@ -32,5 +33,5 @@ public interface MemberService {
 	 public int updateCompany(CompanyVO companyVO) throws DataAccessException;
 	 public int updateEmp(EmpVO empVO) throws DataAccessException;
 	 public int insertItem(ItemVO itemVO) throws DataAccessException;
-	 public int updateCar(String carCode) throws DataAccessException; 
+	 public int updateCar(String carCode) throws DataAccessException;
 }

@@ -368,7 +368,10 @@ public class MemberControllerImpl   implements MemberController {
 			throws Exception {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("html/text;charset=utf-8");
+		
 		int result = 0;
+		carCode = request.getParameter(carCode);
+		System.out.println("what controller have : "  + carCode);
 		result = memberService.updateCar(carCode);
 		ModelAndView mav = new ModelAndView("redirect:/member/carList.do");
 		return mav;

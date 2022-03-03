@@ -95,10 +95,12 @@
     <form method="post" action="${contextPath}/member/insertCar.do">
     	<div id="right-side">
     	<input type="submit" class="button" value="삭제" onclick="javascript: form.action='${contextPath}/member/deleteCar.do';"/>
-    	<input type="submit" class="button" value="수정" onclick="javascript: form.action='${contextPath}/member/updateCar.do';"/>
+    	<input type="submit" class="button" value="수정" onclick="${contextPath}/member/updateCar.do?carCode=${carCode }"/>
     	<input type="submit" class="button" value="등록" onclick="javascript: form.action='${contextPath}/member/insertCar.do';"/><br><br>
     
-        <p>차량 관리코드 <input type="text" name="carCode"></p>
+		
+		    
+        <p>차량 관리코드 <input type="text" name="carCode" ></p>
         <p>차량NO <input type="text" name="carNo"></p>
         <p>차량 크기
         	<select name="carWeight">
@@ -106,7 +108,8 @@
             	<option value="1톤 화물차량">1톤 화물차량</option>
             	<option value="5톤 화물차량">5톤 화물차량</option>
             	<option value="10톤 화물차량">10톤 화물차량</option>
-            </select></p>
+            </select>
+        </p>
         <p>비고 <input type="text" name="carName"></p>
     </div>
    </form>
